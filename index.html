@@ -86,9 +86,9 @@
    </nav>
    <!-- Search bar (hidden by default) -->
    <div class="hidden bg-white border-t border-gray-200 px-4 py-3 max-w-7xl mx-auto" id="searchBar">
-    <form class="flex items-center max-w-xl mx-auto" id="searchForm">
-     <input aria-label="Search wallpapers" autocomplete="off" class="flex-grow border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="searchInput" name="search" placeholder="Search wallpapers, categories, colors..." type="search"/>
-     <button aria-label="Submit search" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-r-md font-semibold transition" type="submit">
+    <form class="flex flex-col sm:flex-row items-center max-w-xl mx-auto" id="searchForm">
+     <input aria-label="Search wallpapers" autocomplete="off" class="flex-grow border border-gray-300 rounded-md sm:rounded-r-none px-4 py-2 mb-2 sm:mb-0 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="searchInput" name="search" placeholder="Search wallpapers, categories, colors..." type="search"/>
+     <button aria-label="Submit search" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md sm:rounded-l-none font-semibold transition sm:ml-[-4px] w-full sm:w-auto" type="submit">
       Search
      </button>
     </form>
@@ -96,21 +96,21 @@
   </header>
   <!-- Hero Section -->
   <section aria-label="Hero section with featured wallpaper and search" class="relative bg-gradient-to-br from-indigo-600 to-indigo-400 text-white">
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center md:items-start gap-10">
-    <div class="md:w-1/2 space-y-6">
-     <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 flex flex-col md:flex-row items-center md:items-start gap-10">
+    <div class="md:w-1/2 space-y-6 text-center md:text-left">
+     <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
       Discover Stunning Wallpapers for Every Screen
      </h1>
-     <p class="text-lg sm:text-xl max-w-xl">
+     <p class="text-base sm:text-lg max-w-xl mx-auto md:mx-0">
       Explore thousands of high-quality wallpapers, curated and ready to beautify your desktop, mobile, or tablet.
      </p>
-     <form aria-label="Hero search form" class="flex max-w-md" id="heroSearchForm" role="search">
+     <form aria-label="Hero search form" class="flex max-w-md mx-auto md:mx-0 w-full" id="heroSearchForm" role="search">
       <input autocomplete="off" class="flex-grow rounded-l-md px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="heroSearchInput" name="heroSearch" placeholder="Search wallpapers, categories, colors..." type="search"/>
       <button aria-label="Search wallpapers" class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-r-md hover:bg-indigo-50 transition" type="submit">
        Search
       </button>
      </form>
-     <div aria-label="Popular categories" class="flex flex-wrap gap-3 mt-4">
+     <div aria-label="Popular categories" class="flex flex-wrap justify-center md:justify-start gap-3 mt-4">
       <a class="bg-indigo-500 hover:bg-indigo-700 px-4 py-2 rounded-full text-white font-semibold transition" href="#categories">
        Nature
       </a>
@@ -128,19 +128,19 @@
       </a>
      </div>
     </div>
-    <div class="md:w-1/2 rounded-lg overflow-hidden shadow-lg max-h-[480px] w-full">
+    <div class="md:w-1/2 rounded-lg overflow-hidden shadow-lg max-h-[480px] w-full max-w-lg mx-auto md:mx-0">
      <img alt="Featured wallpaper showing a breathtaking sunset over mountain range with vibrant orange and purple sky" class="w-full h-full object-cover" height="480" loading="eager" src="https://storage.googleapis.com/a1aa/image/3a3bc6d8-e2fe-49c7-0265-a75726b4bba7.jpg" width="800"/>
     </div>
    </div>
   </section>
   <!-- Explore Section -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="explore">
-   <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16" id="explore">
+   <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">
     Explore Latest Wallpapers
    </h2>
-   <div aria-label="Latest wallpapers grid" aria-live="polite" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 scrollbar-thin overflow-y-auto max-h-[720px]" id="wallpaperGrid">
+   <div aria-label="Latest wallpapers grid" aria-live="polite" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="wallpaperGrid">
     <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
-     <img alt="Wallpaper showing a serene forest path with sunlight filtering through tall green trees" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/97220503-b4e8-4a64-2cc0-1747b3b610db.jpg" width="400"/>
+     <img alt="Wallpaper showing a serene forest path with sunlight filtering through tall green trees" class="w-full h-64 sm:h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/97220503-b4e8-4a64-2cc0-1747b3b610db.jpg" width="400"/>
      <div class="p-4">
       <h3 class="font-semibold text-lg text-gray-900 truncate">
        Forest Path Sunlight
@@ -155,7 +155,7 @@
      </button>
     </article>
     <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
-     <img alt="Wallpaper with abstract colorful geometric shapes in vibrant blues, pinks, and yellows" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/4324c77b-fec4-4ba0-bebb-9e984259486f.jpg" width="400"/>
+     <img alt="Wallpaper with abstract colorful geometric shapes in vibrant blues, pinks, and yellows" class="w-full h-64 sm:h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/4324c77b-fec4-4ba0-bebb-9e984259486f.jpg" width="400"/>
      <div class="p-4">
       <h3 class="font-semibold text-lg text-gray-900 truncate">
        Abstract Colorful Shapes
@@ -170,7 +170,7 @@
      </button>
     </article>
     <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
-     <img alt="Wallpaper showing a stunning galaxy with stars and colorful nebula clouds in deep space" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/4b555c22-c003-437c-5b6c-5acdb777ccfa.jpg" width="400"/>
+     <img alt="Wallpaper showing a stunning galaxy with stars and colorful nebula clouds in deep space" class="w-full h-64 sm:h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/4b555c22-c003-437c-5b6c-5acdb777ccfa.jpg" width="400"/>
      <div class="p-4">
       <h3 class="font-semibold text-lg text-gray-900 truncate">
        Galaxy Stars Nebula
@@ -185,7 +185,7 @@
      </button>
     </article>
     <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
-     <img alt="Wallpaper of a cute puppy closeup with big eyes and soft fur looking at the camera" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1ffc718a-e01f-4d61-861f-cc9233f2609d.jpg" width="400"/>
+     <img alt="Wallpaper of a cute puppy closeup with big eyes and soft fur looking at the camera" class="w-full h-64 sm:h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1ffc718a-e01f-4d61-861f-cc9233f2609d.jpg" width="400"/>
      <div class="p-4">
       <h3 class="font-semibold text-lg text-gray-900 truncate">
        Cute Puppy Closeup
@@ -200,7 +200,7 @@
      </button>
     </article>
     <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
-     <img alt="Wallpaper showing a vibrant city skyline at night with colorful lights reflecting on water" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/257a5cb6-e8bc-4e8e-eb32-4f468fb5ea89.jpg" width="400"/>
+     <img alt="Wallpaper showing a vibrant city skyline at night with colorful lights reflecting on water" class="w-full h-64 sm:h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/257a5cb6-e8bc-4e8e-eb32-4f468fb5ea89.jpg" width="400"/>
      <div class="p-4">
       <h3 class="font-semibold text-lg text-gray-900 truncate">
        City Night Lights
@@ -215,7 +215,7 @@
      </button>
     </article>
     <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
-     <img alt="Wallpaper of a calm mountain lake reflecting snow-capped peaks and blue sky" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/d0fd94da-b3fa-4edb-2a58-0f792e5e26d3.jpg" width="400"/>
+     <img alt="Wallpaper of a calm mountain lake reflecting snow-capped peaks and blue sky" class="w-full h-64 sm:h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/d0fd94da-b3fa-4edb-2a58-0f792e5e26d3.jpg" width="400"/>
      <div class="p-4">
       <h3 class="font-semibold text-lg text-gray-900 truncate">
        Mountain Lake Reflection
@@ -230,7 +230,7 @@
      </button>
     </article>
     <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
-     <img alt="Wallpaper with colorful abstract waves in shades of blue, purple, and pink flowing smoothly" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/49487dee-c58d-41c0-e42f-6cbbd2486908.jpg" width="400"/>
+     <img alt="Wallpaper with colorful abstract waves in shades of blue, purple, and pink flowing smoothly" class="w-full h-64 sm:h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/49487dee-c58d-41c0-e42f-6cbbd2486908.jpg" width="400"/>
      <div class="p-4">
       <h3 class="font-semibold text-lg text-gray-900 truncate">
        Colorful Abstract Waves
@@ -245,7 +245,7 @@
      </button>
     </article>
     <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
-     <img alt="Wallpaper showing a starry night sky with the Milky Way galaxy visible over a dark forest silhouette" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/e1ac6051-f686-4f61-5eb9-f9154ca32ee9.jpg" width="400"/>
+     <img alt="Wallpaper showing a starry night sky with the Milky Way galaxy visible over a dark forest silhouette" class="w-full h-64 sm:h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/e1ac6051-f686-4f61-5eb9-f9154ca32ee9.jpg" width="400"/>
      <div class="p-4">
       <h3 class="font-semibold text-lg text-gray-900 truncate">
        Starry Night Sky
@@ -260,7 +260,7 @@
      </button>
     </article>
     <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
-     <img alt="Wallpaper closeup of a majestic tiger in the wild with intense eyes and detailed fur" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/29a65cf8-70d4-4cd0-a4af-abacaccb7645.jpg" width="400"/>
+     <img alt="Wallpaper closeup of a majestic tiger in the wild with intense eyes and detailed fur" class="w-full h-64 sm:h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/29a65cf8-70d4-4cd0-a4af-abacaccb7645.jpg" width="400"/>
      <div class="p-4">
       <h3 class="font-semibold text-lg text-gray-900 truncate">
        Tiger Closeup Wildlife
@@ -275,7 +275,7 @@
      </button>
     </article>
     <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
-     <img alt="Wallpaper of a modern cityscape at sunset with skyscrapers glowing orange and purple sky" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/10e66c80-7387-4b64-bd18-a8c2a9392794.jpg" width="400"/>
+     <img alt="Wallpaper of a modern cityscape at sunset with skyscrapers glowing orange and purple sky" class="w-full h-64 sm:h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/10e66c80-7387-4b64-bd18-a8c2a9392794.jpg" width="400"/>
      <div class="p-4">
       <h3 class="font-semibold text-lg text-gray-900 truncate">
        Modern Cityscape Sunset
@@ -290,7 +290,7 @@
      </button>
     </article>
     <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
-     <img alt="Wallpaper showing ocean waves crashing at sunrise with warm golden light and blue water" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/c838d54e-c869-4ba7-8be0-dc0e4bd6fcb0.jpg" width="400"/>
+     <img alt="Wallpaper showing ocean waves crashing at sunrise with warm golden light and blue water" class="w-full h-64 sm:h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/c838d54e-c869-4ba7-8be0-dc0e4bd6fcb0.jpg" width="400"/>
      <div class="p-4">
       <h3 class="font-semibold text-lg text-gray-900 truncate">
        Ocean Waves Sunrise
@@ -305,7 +305,7 @@
      </button>
     </article>
     <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
-     <img alt="Wallpaper with colorful smoke swirling in abstract patterns on a black background" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/87fccd91-40e1-4de7-9f1f-4176050d69c7.jpg" width="400"/>
+     <img alt="Wallpaper with colorful smoke swirling in abstract patterns on a black background" class="w-full h-64 sm:h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/87fccd91-40e1-4de7-9f1f-4176050d69c7.jpg" width="400"/>
      <div class="p-4">
       <h3 class="font-semibold text-lg text-gray-900 truncate">
        Colorful Smoke Abstract
@@ -320,7 +320,7 @@
      </button>
     </article>
     <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
-     <img alt="Wallpaper showing the Milky Way galaxy arching over a desert landscape with sand dunes" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/82871b12-e368-4f03-4f23-466495bf863e.jpg" width="400"/>
+     <img alt="Wallpaper showing the Milky Way galaxy arching over a desert landscape with sand dunes" class="w-full h-64 sm:h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/82871b12-e368-4f03-4f23-466495bf863e.jpg" width="400"/>
      <div class="p-4">
       <h3 class="font-semibold text-lg text-gray-900 truncate">
        Milky Way Over Desert
@@ -335,7 +335,7 @@
      </button>
     </article>
     <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
-     <img alt="Wallpaper of a snowy mountain peak under a clear blue sky with crisp white snow" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1cc76729-a990-45f6-6ddf-2f78f081d10a.jpg" width="400"/>
+     <img alt="Wallpaper of a snowy mountain peak under a clear blue sky with crisp white snow" class="w-full h-64 sm:h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1cc76729-a990-45f6-6ddf-2f78f081d10a.jpg" width="400"/>
      <div class="p-4">
       <h3 class="font-semibold text-lg text-gray-900 truncate">
        Snowy Mountain Peak
@@ -350,7 +350,7 @@
      </button>
     </article>
     <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
-     <img alt="Wallpaper showing a city bridge illuminated at night with reflections on the water below" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/2d143c32-ff11-45a8-a74a-6a0962a508eb.jpg" width="400"/>
+     <img alt="Wallpaper showing a city bridge illuminated at night with reflections on the water below" class="w-full h-64 sm:h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/2d143c32-ff11-45a8-a74a-6a0962a508eb.jpg" width="400"/>
      <div class="p-4">
       <h3 class="font-semibold text-lg text-gray-900 truncate">
        City Bridge Night
@@ -367,39 +367,39 @@
    </div>
   </section>
   <!-- Categories Section -->
-  <section class="bg-white py-16" id="categories">
+  <section class="bg-white py-12 sm:py-16" id="categories">
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-bold text-gray-900 mb-10 text-center">
+    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 sm:mb-10 text-center">
      Browse by Categories
     </h2>
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6">
      <a class="group block rounded-lg overflow-hidden shadow hover:shadow-lg transition cursor-pointer" href="#explore">
-      <img alt="Category preview image showing lush green forest with sunlight filtering through trees" class="w-full h-40 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/5482ee2c-e45a-4c64-664d-baf26b944a7d.jpg" width="400"/>
-      <div class="p-3 text-center font-semibold text-gray-800 group-hover:text-indigo-600 transition">
+      <img alt="Category preview image showing lush green forest with sunlight filtering through trees" class="w-full h-32 sm:h-40 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/5482ee2c-e45a-4c64-664d-baf26b944a7d.jpg" width="400"/>
+      <div class="p-2 sm:p-3 text-center font-semibold text-gray-800 group-hover:text-indigo-600 transition text-sm sm:text-base">
        Nature
       </div>
      </a>
      <a class="group block rounded-lg overflow-hidden shadow hover:shadow-lg transition cursor-pointer" href="#explore">
-      <img alt="Category preview image with colorful abstract shapes and gradients" class="w-full h-40 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/b89b9979-57e4-42c0-e2c4-ac9a06e205f9.jpg" width="400"/>
-      <div class="p-3 text-center font-semibold text-gray-800 group-hover:text-indigo-600 transition">
+      <img alt="Category preview image with colorful abstract shapes and gradients" class="w-full h-32 sm:h-40 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/b89b9979-57e4-42c0-e2c4-ac9a06e205f9.jpg" width="400"/>
+      <div class="p-2 sm:p-3 text-center font-semibold text-gray-800 group-hover:text-indigo-600 transition text-sm sm:text-base">
        Abstract
       </div>
      </a>
      <a class="group block rounded-lg overflow-hidden shadow hover:shadow-lg transition cursor-pointer" href="#explore">
-      <img alt="Category preview image showing stars, galaxies, and nebulae in deep space" class="w-full h-40 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/af97659d-ebf3-4b76-4ae8-b9f65cb88e79.jpg" width="400"/>
-      <div class="p-3 text-center font-semibold text-gray-800 group-hover:text-indigo-600 transition">
+      <img alt="Category preview image showing stars, galaxies, and nebulae in deep space" class="w-full h-32 sm:h-40 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/af97659d-ebf3-4b76-4ae8-b9f65cb88e79.jpg" width="400"/>
+      <div class="p-2 sm:p-3 text-center font-semibold text-gray-800 group-hover:text-indigo-600 transition text-sm sm:text-base">
        Space
       </div>
      </a>
      <a class="group block rounded-lg overflow-hidden shadow hover:shadow-lg transition cursor-pointer" href="#explore">
-      <img alt="Category preview image showing a closeup of a wild animal in natural habitat" class="w-full h-40 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/49f9e2c2-36a9-4c98-609e-7d631f222909.jpg" width="400"/>
-      <div class="p-3 text-center font-semibold text-gray-800 group-hover:text-indigo-600 transition">
+      <img alt="Category preview image showing a closeup of a wild animal in natural habitat" class="w-full h-32 sm:h-40 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/49f9e2c2-36a9-4c98-609e-7d631f222909.jpg" width="400"/>
+      <div class="p-2 sm:p-3 text-center font-semibold text-gray-800 group-hover:text-indigo-600 transition text-sm sm:text-base">
        Animals
       </div>
      </a>
      <a class="group block rounded-lg overflow-hidden shadow hover:shadow-lg transition cursor-pointer" href="#explore">
-      <img alt="Category preview image showing a city skyline with skyscrapers and urban lights" class="w-full h-40 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/ebd5c3a8-8355-4f3d-3712-cf4f13416cbc.jpg" width="400"/>
-      <div class="p-3 text-center font-semibold text-gray-800 group-hover:text-indigo-600 transition">
+      <img alt="Category preview image showing a city skyline with skyscrapers and urban lights" class="w-full h-32 sm:h-40 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/ebd5c3a8-8355-4f3d-3712-cf4f13416cbc.jpg" width="400"/>
+      <div class="p-2 sm:p-3 text-center font-semibold text-gray-800 group-hover:text-indigo-600 transition text-sm sm:text-base">
        Cities
       </div>
      </a>
@@ -407,8 +407,8 @@
    </div>
   </section>
   <!-- Upload Section -->
-  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-indigo-50 rounded-lg shadow-lg my-16" id="upload">
-   <h2 class="text-3xl font-bold text-indigo-700 mb-8 text-center">
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 bg-indigo-50 rounded-lg shadow-lg my-12 sm:my-16" id="upload">
+   <h2 class="text-2xl sm:text-3xl font-bold text-indigo-700 mb-8 text-center">
     Upload Your Wallpaper
    </h2>
    <form aria-label="Wallpaper upload form" class="space-y-6" enctype="multipart/form-data" id="uploadForm" novalidate="">
@@ -465,7 +465,7 @@
      <input accept="image/png, image/jpeg, image/webp" aria-required="true" class="w-full text-indigo-900" id="wallpaperFile" name="wallpaperFile" required="" type="file"/>
     </div>
     <div class="flex justify-center">
-     <button aria-label="Submit wallpaper upload" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3 rounded-md transition" type="submit">
+     <button aria-label="Submit wallpaper upload" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3 rounded-md transition w-full sm:w-auto" type="submit">
       Upload Wallpaper
      </button>
     </div>
@@ -474,21 +474,21 @@
    </form>
   </section>
   <!-- About Section -->
-  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center" id="about">
-   <h2 class="text-3xl font-bold text-gray-900 mb-6">
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 text-center" id="about">
+   <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
     About Wallz
    </h2>
-   <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+   <p class="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
     Wallz is your ultimate destination for high-quality, beautiful wallpapers. Whether you want to refresh your desktop, phone, or tablet, Wallz offers a vast collection of stunning images across multiple categories. Our mission is to empower creators and wallpaper lovers alike by providing an easy-to-use platform to explore, download, and upload amazing wallpapers.
    </p>
   </section>
   <!-- Footer -->
   <footer class="bg-white border-t border-gray-200 mt-auto">
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 flex flex-col sm:flex-row justify-between items-center text-gray-600 text-sm">
     <p>
      © 2024 Wallz. All rights reserved.
     </p>
-    <div class="flex space-x-6 mt-4 md:mt-0">
+    <div class="flex space-x-6 mt-4 sm:mt-0">
      <a aria-label="Facebook" class="hover:text-indigo-600 transition" href="#">
       <i class="fab fa-facebook fa-lg">
       </i>
@@ -637,7 +637,7 @@
           const newImg = document.createElement('img');
           newImg.src = event.target.result;
           newImg.alt = `User uploaded wallpaper titled ${title} in category ${category}`;
-          newImg.className = 'w-full h-72 object-cover';
+          newImg.className = 'w-full h-64 sm:h-72 object-cover';
           newImg.loading = 'lazy';
 
           const newDiv = document.createElement('div');
