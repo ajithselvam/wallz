@@ -1,0 +1,690 @@
+<html class="scroll-smooth" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Wallz - Stunning Wallpapers for Every Screen
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Poppins', sans-serif;
+    }
+    /* Scrollbar for wallpaper grid */
+    .scrollbar-thin::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+      background-color: rgba(100, 100, 100, 0.5);
+      border-radius: 3px;
+    }
+  </style>
+ </head>
+ <body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
+  <!-- Header / Navbar -->
+  <header class="bg-white shadow sticky top-0 z-50">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <a class="flex items-center space-x-2" href="#">
+     <img alt="Wallz logo, stylized letter W in purple square" class="w-10 h-10 rounded" height="40" src="https://storage.googleapis.com/a1aa/image/c49a1dff-40cc-4e3a-3e5c-68fd304b6655.jpg" width="40"/>
+     <span class="text-2xl font-bold text-indigo-600 select-none">
+      Wallz
+     </span>
+    </a>
+    <nav class="hidden md:flex space-x-8 font-semibold text-gray-700">
+     <a class="hover:text-indigo-600 transition" href="#">
+      Home
+     </a>
+     <a class="hover:text-indigo-600 transition" href="#explore">
+      Explore
+     </a>
+     <a class="hover:text-indigo-600 transition" href="#categories">
+      Categories
+     </a>
+     <a class="hover:text-indigo-600 transition" href="#upload">
+      Upload
+     </a>
+     <a class="hover:text-indigo-600 transition" href="#about">
+      About
+     </a>
+    </nav>
+    <div class="hidden md:flex items-center space-x-4">
+     <button aria-label="Open search" class="text-gray-600 hover:text-indigo-600 transition focus:outline-none" id="searchBtn">
+      <i class="fas fa-search fa-lg">
+      </i>
+     </button>
+     <button aria-label="Go to upload section" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md font-semibold transition" id="uploadBtn">
+      Upload
+     </button>
+    </div>
+    <!-- Mobile menu button -->
+    <button aria-label="Toggle menu" class="md:hidden text-gray-600 hover:text-indigo-600 focus:outline-none" id="mobileMenuBtn">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+   </div>
+   <!-- Mobile menu -->
+   <nav aria-label="Mobile menu" class="hidden md:hidden bg-white border-t border-gray-200" id="mobileMenu">
+    <a class="block px-4 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 font-semibold" href="#">
+     Home
+    </a>
+    <a class="block px-4 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 font-semibold" href="#explore">
+     Explore
+    </a>
+    <a class="block px-4 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 font-semibold" href="#categories">
+     Categories
+    </a>
+    <a class="block px-4 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 font-semibold" href="#upload">
+     Upload
+    </a>
+    <a class="block px-4 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 font-semibold" href="#about">
+     About
+    </a>
+   </nav>
+   <!-- Search bar (hidden by default) -->
+   <div class="hidden bg-white border-t border-gray-200 px-4 py-3 max-w-7xl mx-auto" id="searchBar">
+    <form class="flex items-center max-w-xl mx-auto" id="searchForm">
+     <input aria-label="Search wallpapers" autocomplete="off" class="flex-grow border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="searchInput" name="search" placeholder="Search wallpapers, categories, colors..." type="search"/>
+     <button aria-label="Submit search" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-r-md font-semibold transition" type="submit">
+      Search
+     </button>
+    </form>
+   </div>
+  </header>
+  <!-- Hero Section -->
+  <section aria-label="Hero section with featured wallpaper and search" class="relative bg-gradient-to-br from-indigo-600 to-indigo-400 text-white">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center md:items-start gap-10">
+    <div class="md:w-1/2 space-y-6">
+     <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
+      Discover Stunning Wallpapers for Every Screen
+     </h1>
+     <p class="text-lg sm:text-xl max-w-xl">
+      Explore thousands of high-quality wallpapers, curated and ready to beautify your desktop, mobile, or tablet.
+     </p>
+     <form aria-label="Hero search form" class="flex max-w-md" id="heroSearchForm" role="search">
+      <input autocomplete="off" class="flex-grow rounded-l-md px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="heroSearchInput" name="heroSearch" placeholder="Search wallpapers, categories, colors..." type="search"/>
+      <button aria-label="Search wallpapers" class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-r-md hover:bg-indigo-50 transition" type="submit">
+       Search
+      </button>
+     </form>
+     <div aria-label="Popular categories" class="flex flex-wrap gap-3 mt-4">
+      <a class="bg-indigo-500 hover:bg-indigo-700 px-4 py-2 rounded-full text-white font-semibold transition" href="#categories">
+       Nature
+      </a>
+      <a class="bg-indigo-500 hover:bg-indigo-700 px-4 py-2 rounded-full text-white font-semibold transition" href="#categories">
+       Abstract
+      </a>
+      <a class="bg-indigo-500 hover:bg-indigo-700 px-4 py-2 rounded-full text-white font-semibold transition" href="#categories">
+       Space
+      </a>
+      <a class="bg-indigo-500 hover:bg-indigo-700 px-4 py-2 rounded-full text-white font-semibold transition" href="#categories">
+       Animals
+      </a>
+      <a class="bg-indigo-500 hover:bg-indigo-700 px-4 py-2 rounded-full text-white font-semibold transition" href="#categories">
+       Cities
+      </a>
+     </div>
+    </div>
+    <div class="md:w-1/2 rounded-lg overflow-hidden shadow-lg max-h-[480px] w-full">
+     <img alt="Featured wallpaper showing a breathtaking sunset over mountain range with vibrant orange and purple sky" class="w-full h-full object-cover" height="480" loading="eager" src="https://storage.googleapis.com/a1aa/image/3a3bc6d8-e2fe-49c7-0265-a75726b4bba7.jpg" width="800"/>
+    </div>
+   </div>
+  </section>
+  <!-- Explore Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="explore">
+   <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+    Explore Latest Wallpapers
+   </h2>
+   <div aria-label="Latest wallpapers grid" aria-live="polite" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 scrollbar-thin overflow-y-auto max-h-[720px]" id="wallpaperGrid">
+    <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
+     <img alt="Wallpaper showing a serene forest path with sunlight filtering through tall green trees" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/97220503-b4e8-4a64-2cc0-1747b3b610db.jpg" width="400"/>
+     <div class="p-4">
+      <h3 class="font-semibold text-lg text-gray-900 truncate">
+       Forest Path Sunlight
+      </h3>
+      <p class="text-sm text-gray-600 mt-1 truncate">
+       Nature
+      </p>
+     </div>
+     <button aria-label="Download Forest Path Sunlight wallpaper" class="absolute top-3 right-3 bg-indigo-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition">
+      <i class="fas fa-download">
+      </i>
+     </button>
+    </article>
+    <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
+     <img alt="Wallpaper with abstract colorful geometric shapes in vibrant blues, pinks, and yellows" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/4324c77b-fec4-4ba0-bebb-9e984259486f.jpg" width="400"/>
+     <div class="p-4">
+      <h3 class="font-semibold text-lg text-gray-900 truncate">
+       Abstract Colorful Shapes
+      </h3>
+      <p class="text-sm text-gray-600 mt-1 truncate">
+       Abstract
+      </p>
+     </div>
+     <button aria-label="Download Abstract Colorful Shapes wallpaper" class="absolute top-3 right-3 bg-indigo-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition">
+      <i class="fas fa-download">
+      </i>
+     </button>
+    </article>
+    <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
+     <img alt="Wallpaper showing a stunning galaxy with stars and colorful nebula clouds in deep space" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/4b555c22-c003-437c-5b6c-5acdb777ccfa.jpg" width="400"/>
+     <div class="p-4">
+      <h3 class="font-semibold text-lg text-gray-900 truncate">
+       Galaxy Stars Nebula
+      </h3>
+      <p class="text-sm text-gray-600 mt-1 truncate">
+       Space
+      </p>
+     </div>
+     <button aria-label="Download Galaxy Stars Nebula wallpaper" class="absolute top-3 right-3 bg-indigo-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition">
+      <i class="fas fa-download">
+      </i>
+     </button>
+    </article>
+    <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
+     <img alt="Wallpaper of a cute puppy closeup with big eyes and soft fur looking at the camera" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1ffc718a-e01f-4d61-861f-cc9233f2609d.jpg" width="400"/>
+     <div class="p-4">
+      <h3 class="font-semibold text-lg text-gray-900 truncate">
+       Cute Puppy Closeup
+      </h3>
+      <p class="text-sm text-gray-600 mt-1 truncate">
+       Animals
+      </p>
+     </div>
+     <button aria-label="Download Cute Puppy Closeup wallpaper" class="absolute top-3 right-3 bg-indigo-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition">
+      <i class="fas fa-download">
+      </i>
+     </button>
+    </article>
+    <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
+     <img alt="Wallpaper showing a vibrant city skyline at night with colorful lights reflecting on water" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/257a5cb6-e8bc-4e8e-eb32-4f468fb5ea89.jpg" width="400"/>
+     <div class="p-4">
+      <h3 class="font-semibold text-lg text-gray-900 truncate">
+       City Night Lights
+      </h3>
+      <p class="text-sm text-gray-600 mt-1 truncate">
+       Cities
+      </p>
+     </div>
+     <button aria-label="Download City Night Lights wallpaper" class="absolute top-3 right-3 bg-indigo-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition">
+      <i class="fas fa-download">
+      </i>
+     </button>
+    </article>
+    <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
+     <img alt="Wallpaper of a calm mountain lake reflecting snow-capped peaks and blue sky" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/d0fd94da-b3fa-4edb-2a58-0f792e5e26d3.jpg" width="400"/>
+     <div class="p-4">
+      <h3 class="font-semibold text-lg text-gray-900 truncate">
+       Mountain Lake Reflection
+      </h3>
+      <p class="text-sm text-gray-600 mt-1 truncate">
+       Nature
+      </p>
+     </div>
+     <button aria-label="Download Mountain Lake Reflection wallpaper" class="absolute top-3 right-3 bg-indigo-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition">
+      <i class="fas fa-download">
+      </i>
+     </button>
+    </article>
+    <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
+     <img alt="Wallpaper with colorful abstract waves in shades of blue, purple, and pink flowing smoothly" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/49487dee-c58d-41c0-e42f-6cbbd2486908.jpg" width="400"/>
+     <div class="p-4">
+      <h3 class="font-semibold text-lg text-gray-900 truncate">
+       Colorful Abstract Waves
+      </h3>
+      <p class="text-sm text-gray-600 mt-1 truncate">
+       Abstract
+      </p>
+     </div>
+     <button aria-label="Download Colorful Abstract Waves wallpaper" class="absolute top-3 right-3 bg-indigo-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition">
+      <i class="fas fa-download">
+      </i>
+     </button>
+    </article>
+    <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
+     <img alt="Wallpaper showing a starry night sky with the Milky Way galaxy visible over a dark forest silhouette" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/e1ac6051-f686-4f61-5eb9-f9154ca32ee9.jpg" width="400"/>
+     <div class="p-4">
+      <h3 class="font-semibold text-lg text-gray-900 truncate">
+       Starry Night Sky
+      </h3>
+      <p class="text-sm text-gray-600 mt-1 truncate">
+       Space
+      </p>
+     </div>
+     <button aria-label="Download Starry Night Sky wallpaper" class="absolute top-3 right-3 bg-indigo-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition">
+      <i class="fas fa-download">
+      </i>
+     </button>
+    </article>
+    <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
+     <img alt="Wallpaper closeup of a majestic tiger in the wild with intense eyes and detailed fur" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/29a65cf8-70d4-4cd0-a4af-abacaccb7645.jpg" width="400"/>
+     <div class="p-4">
+      <h3 class="font-semibold text-lg text-gray-900 truncate">
+       Tiger Closeup Wildlife
+      </h3>
+      <p class="text-sm text-gray-600 mt-1 truncate">
+       Animals
+      </p>
+     </div>
+     <button aria-label="Download Tiger Closeup Wildlife wallpaper" class="absolute top-3 right-3 bg-indigo-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition">
+      <i class="fas fa-download">
+      </i>
+     </button>
+    </article>
+    <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
+     <img alt="Wallpaper of a modern cityscape at sunset with skyscrapers glowing orange and purple sky" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/10e66c80-7387-4b64-bd18-a8c2a9392794.jpg" width="400"/>
+     <div class="p-4">
+      <h3 class="font-semibold text-lg text-gray-900 truncate">
+       Modern Cityscape Sunset
+      </h3>
+      <p class="text-sm text-gray-600 mt-1 truncate">
+       Cities
+      </p>
+     </div>
+     <button aria-label="Download Modern Cityscape Sunset wallpaper" class="absolute top-3 right-3 bg-indigo-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition">
+      <i class="fas fa-download">
+      </i>
+     </button>
+    </article>
+    <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
+     <img alt="Wallpaper showing ocean waves crashing at sunrise with warm golden light and blue water" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/c838d54e-c869-4ba7-8be0-dc0e4bd6fcb0.jpg" width="400"/>
+     <div class="p-4">
+      <h3 class="font-semibold text-lg text-gray-900 truncate">
+       Ocean Waves Sunrise
+      </h3>
+      <p class="text-sm text-gray-600 mt-1 truncate">
+       Nature
+      </p>
+     </div>
+     <button aria-label="Download Ocean Waves Sunrise wallpaper" class="absolute top-3 right-3 bg-indigo-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition">
+      <i class="fas fa-download">
+      </i>
+     </button>
+    </article>
+    <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
+     <img alt="Wallpaper with colorful smoke swirling in abstract patterns on a black background" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/87fccd91-40e1-4de7-9f1f-4176050d69c7.jpg" width="400"/>
+     <div class="p-4">
+      <h3 class="font-semibold text-lg text-gray-900 truncate">
+       Colorful Smoke Abstract
+      </h3>
+      <p class="text-sm text-gray-600 mt-1 truncate">
+       Abstract
+      </p>
+     </div>
+     <button aria-label="Download Colorful Smoke Abstract wallpaper" class="absolute top-3 right-3 bg-indigo-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition">
+      <i class="fas fa-download">
+      </i>
+     </button>
+    </article>
+    <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
+     <img alt="Wallpaper showing the Milky Way galaxy arching over a desert landscape with sand dunes" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/82871b12-e368-4f03-4f23-466495bf863e.jpg" width="400"/>
+     <div class="p-4">
+      <h3 class="font-semibold text-lg text-gray-900 truncate">
+       Milky Way Over Desert
+      </h3>
+      <p class="text-sm text-gray-600 mt-1 truncate">
+       Space
+      </p>
+     </div>
+     <button aria-label="Download Milky Way Over Desert wallpaper" class="absolute top-3 right-3 bg-indigo-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition">
+      <i class="fas fa-download">
+      </i>
+     </button>
+    </article>
+    <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
+     <img alt="Wallpaper of a snowy mountain peak under a clear blue sky with crisp white snow" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1cc76729-a990-45f6-6ddf-2f78f081d10a.jpg" width="400"/>
+     <div class="p-4">
+      <h3 class="font-semibold text-lg text-gray-900 truncate">
+       Snowy Mountain Peak
+      </h3>
+      <p class="text-sm text-gray-600 mt-1 truncate">
+       Nature
+      </p>
+     </div>
+     <button aria-label="Download Snowy Mountain Peak wallpaper" class="absolute top-3 right-3 bg-indigo-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition">
+      <i class="fas fa-download">
+      </i>
+     </button>
+    </article>
+    <article class="group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative" tabindex="0">
+     <img alt="Wallpaper showing a city bridge illuminated at night with reflections on the water below" class="w-full h-72 object-cover" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/2d143c32-ff11-45a8-a74a-6a0962a508eb.jpg" width="400"/>
+     <div class="p-4">
+      <h3 class="font-semibold text-lg text-gray-900 truncate">
+       City Bridge Night
+      </h3>
+      <p class="text-sm text-gray-600 mt-1 truncate">
+       Cities
+      </p>
+     </div>
+     <button aria-label="Download City Bridge Night wallpaper" class="absolute top-3 right-3 bg-indigo-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition">
+      <i class="fas fa-download">
+      </i>
+     </button>
+    </article>
+   </div>
+  </section>
+  <!-- Categories Section -->
+  <section class="bg-white py-16" id="categories">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-gray-900 mb-10 text-center">
+     Browse by Categories
+    </h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+     <a class="group block rounded-lg overflow-hidden shadow hover:shadow-lg transition cursor-pointer" href="#explore">
+      <img alt="Category preview image showing lush green forest with sunlight filtering through trees" class="w-full h-40 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/5482ee2c-e45a-4c64-664d-baf26b944a7d.jpg" width="400"/>
+      <div class="p-3 text-center font-semibold text-gray-800 group-hover:text-indigo-600 transition">
+       Nature
+      </div>
+     </a>
+     <a class="group block rounded-lg overflow-hidden shadow hover:shadow-lg transition cursor-pointer" href="#explore">
+      <img alt="Category preview image with colorful abstract shapes and gradients" class="w-full h-40 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/b89b9979-57e4-42c0-e2c4-ac9a06e205f9.jpg" width="400"/>
+      <div class="p-3 text-center font-semibold text-gray-800 group-hover:text-indigo-600 transition">
+       Abstract
+      </div>
+     </a>
+     <a class="group block rounded-lg overflow-hidden shadow hover:shadow-lg transition cursor-pointer" href="#explore">
+      <img alt="Category preview image showing stars, galaxies, and nebulae in deep space" class="w-full h-40 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/af97659d-ebf3-4b76-4ae8-b9f65cb88e79.jpg" width="400"/>
+      <div class="p-3 text-center font-semibold text-gray-800 group-hover:text-indigo-600 transition">
+       Space
+      </div>
+     </a>
+     <a class="group block rounded-lg overflow-hidden shadow hover:shadow-lg transition cursor-pointer" href="#explore">
+      <img alt="Category preview image showing a closeup of a wild animal in natural habitat" class="w-full h-40 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/49f9e2c2-36a9-4c98-609e-7d631f222909.jpg" width="400"/>
+      <div class="p-3 text-center font-semibold text-gray-800 group-hover:text-indigo-600 transition">
+       Animals
+      </div>
+     </a>
+     <a class="group block rounded-lg overflow-hidden shadow hover:shadow-lg transition cursor-pointer" href="#explore">
+      <img alt="Category preview image showing a city skyline with skyscrapers and urban lights" class="w-full h-40 object-cover group-hover:scale-105 transition-transform" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/ebd5c3a8-8355-4f3d-3712-cf4f13416cbc.jpg" width="400"/>
+      <div class="p-3 text-center font-semibold text-gray-800 group-hover:text-indigo-600 transition">
+       Cities
+      </div>
+     </a>
+    </div>
+   </div>
+  </section>
+  <!-- Upload Section -->
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-indigo-50 rounded-lg shadow-lg my-16" id="upload">
+   <h2 class="text-3xl font-bold text-indigo-700 mb-8 text-center">
+    Upload Your Wallpaper
+   </h2>
+   <form aria-label="Wallpaper upload form" class="space-y-6" enctype="multipart/form-data" id="uploadForm" novalidate="">
+    <div>
+     <label class="block text-indigo-900 font-semibold mb-2" for="title">
+      Wallpaper Title
+      <span class="text-red-600">
+       *
+      </span>
+     </label>
+     <input aria-required="true" class="w-full rounded-md border border-indigo-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="title" name="title" placeholder="Enter wallpaper title" required="" type="text"/>
+    </div>
+    <div>
+     <label class="block text-indigo-900 font-semibold mb-2" for="category">
+      Category
+      <span class="text-red-600">
+       *
+      </span>
+     </label>
+     <select aria-required="true" class="w-full rounded-md border border-indigo-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="category" name="category" required="">
+      <option disabled="" selected="" value="">
+       Select a category
+      </option>
+      <option value="Nature">
+       Nature
+      </option>
+      <option value="Abstract">
+       Abstract
+      </option>
+      <option value="Space">
+       Space
+      </option>
+      <option value="Animals">
+       Animals
+      </option>
+      <option value="Cities">
+       Cities
+      </option>
+     </select>
+    </div>
+    <div>
+     <label class="block text-indigo-900 font-semibold mb-2" for="description">
+      Description
+     </label>
+     <textarea class="w-full rounded-md border border-indigo-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none" id="description" name="description" placeholder="Add a short description (optional)" rows="3"></textarea>
+    </div>
+    <div>
+     <label class="block text-indigo-900 font-semibold mb-2" for="wallpaperFile">
+      Select Wallpaper Image
+      <span class="text-red-600">
+       *
+      </span>
+     </label>
+     <input accept="image/png, image/jpeg, image/webp" aria-required="true" class="w-full text-indigo-900" id="wallpaperFile" name="wallpaperFile" required="" type="file"/>
+    </div>
+    <div class="flex justify-center">
+     <button aria-label="Submit wallpaper upload" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3 rounded-md transition" type="submit">
+      Upload Wallpaper
+     </button>
+    </div>
+    <p class="text-center mt-4 font-semibold" id="uploadMessage" role="alert">
+    </p>
+   </form>
+  </section>
+  <!-- About Section -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center" id="about">
+   <h2 class="text-3xl font-bold text-gray-900 mb-6">
+    About Wallz
+   </h2>
+   <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+    Wallz is your ultimate destination for high-quality, beautiful wallpapers. Whether you want to refresh your desktop, phone, or tablet, Wallz offers a vast collection of stunning images across multiple categories. Our mission is to empower creators and wallpaper lovers alike by providing an easy-to-use platform to explore, download, and upload amazing wallpapers.
+   </p>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 mt-auto">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
+    <p>
+     © 2024 Wallz. All rights reserved.
+    </p>
+    <div class="flex space-x-6 mt-4 md:mt-0">
+     <a aria-label="Facebook" class="hover:text-indigo-600 transition" href="#">
+      <i class="fab fa-facebook fa-lg">
+      </i>
+     </a>
+     <a aria-label="Twitter" class="hover:text-indigo-600 transition" href="#">
+      <i class="fab fa-twitter fa-lg">
+      </i>
+     </a>
+     <a aria-label="Instagram" class="hover:text-indigo-600 transition" href="#">
+      <i class="fab fa-instagram fa-lg">
+      </i>
+     </a>
+     <a aria-label="LinkedIn" class="hover:text-indigo-600 transition" href="#">
+      <i class="fab fa-linkedin fa-lg">
+      </i>
+     </a>
+    </div>
+   </div>
+  </footer>
+  <script>
+   // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Search bar toggle
+    const searchBtn = document.getElementById('searchBtn');
+    const searchBar = document.getElementById('searchBar');
+    searchBtn.addEventListener('click', () => {
+      if (searchBar.classList.contains('hidden')) {
+        searchBar.classList.remove('hidden');
+        document.getElementById('searchInput').focus();
+      } else {
+        searchBar.classList.add('hidden');
+      }
+    });
+
+    // Upload button scroll to upload section
+    const uploadBtn = document.getElementById('uploadBtn');
+    uploadBtn.addEventListener('click', () => {
+      document.getElementById('upload').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Hero search form submit handler
+    const heroSearchForm = document.getElementById('heroSearchForm');
+    heroSearchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const query = e.target.heroSearch.value.trim();
+      if (query) {
+        alert(`Search for wallpapers: "${query}"`);
+        // Implement search functionality here
+      }
+    });
+
+    // Search bar form submit handler
+    const searchForm = document.getElementById('searchForm');
+    searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const query = e.target.search.value.trim();
+      if (query) {
+        alert(`Search for wallpapers: "${query}"`);
+        // Implement search functionality here
+      }
+    });
+
+    // Download buttons functionality (simulate download)
+    document.querySelectorAll('#wallpaperGrid button').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const article = btn.closest('article');
+        const img = article.querySelector('img');
+        const title = article.querySelector('h3').textContent;
+        // Simulate download by opening image in new tab
+        window.open(img.src, '_blank');
+        alert(`Downloading wallpaper: "${title}"`);
+      });
+    });
+
+    // Wallpaper card keyboard accessibility: Enter key triggers download
+    document.querySelectorAll('#wallpaperGrid article').forEach((card) => {
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const btn = card.querySelector('button');
+          btn.click();
+        }
+      });
+    });
+
+    // Upload form handling
+    const uploadForm = document.getElementById('uploadForm');
+    const uploadMessage = document.getElementById('uploadMessage');
+
+    uploadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      uploadMessage.textContent = '';
+      const title = uploadForm.title.value.trim();
+      const category = uploadForm.category.value;
+      const description = uploadForm.description.value.trim();
+      const fileInput = uploadForm.wallpaperFile;
+      const file = fileInput.files[0];
+
+      if (!title) {
+        uploadMessage.textContent = 'Please enter a wallpaper title.';
+        uploadMessage.classList.add('text-red-600');
+        return;
+      }
+      if (!category) {
+        uploadMessage.textContent = 'Please select a category.';
+        uploadMessage.classList.add('text-red-600');
+        return;
+      }
+      if (!file) {
+        uploadMessage.textContent = 'Please select an image file to upload.';
+        uploadMessage.classList.add('text-red-600');
+        return;
+      }
+      if (!['image/png', 'image/jpeg', 'image/webp'].includes(file.type)) {
+        uploadMessage.textContent = 'Only PNG, JPEG, and WEBP image formats are allowed.';
+        uploadMessage.classList.add('text-red-600');
+        return;
+      }
+      if (file.size > 10 * 1024 * 1024) {
+        uploadMessage.textContent = 'File size must be less than 10MB.';
+        uploadMessage.classList.add('text-red-600');
+        return;
+      }
+
+      // Simulate upload process
+      uploadMessage.textContent = 'Uploading...';
+      uploadMessage.classList.remove('text-red-600');
+      uploadMessage.classList.add('text-indigo-700');
+
+      // Simulate async upload delay
+      setTimeout(() => {
+        // Add new wallpaper card to the grid dynamically
+        const reader = new FileReader();
+        reader.onload = function (event) {
+          const wallpaperGrid = document.getElementById('wallpaperGrid');
+
+          const newArticle = document.createElement('article');
+          newArticle.setAttribute('tabindex', '0');
+          newArticle.className = 'group rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-xl transition relative';
+
+          const newImg = document.createElement('img');
+          newImg.src = event.target.result;
+          newImg.alt = `User uploaded wallpaper titled ${title} in category ${category}`;
+          newImg.className = 'w-full h-72 object-cover';
+          newImg.loading = 'lazy';
+
+          const newDiv = document.createElement('div');
+          newDiv.className = 'p-4';
+
+          const newH3 = document.createElement('h3');
+          newH3.className = 'font-semibold text-lg text-gray-900 truncate';
+          newH3.textContent = title;
+
+          const newP = document.createElement('p');
+          newP.className = 'text-sm text-gray-600 mt-1 truncate';
+          newP.textContent = category;
+
+          const newBtn = document.createElement('button');
+          newBtn.setAttribute('aria-label', `Download ${title} wallpaper`);
+          newBtn.className = 'absolute top-3 right-3 bg-indigo-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition';
+          newBtn.innerHTML = '<i class="fas fa-download"></i>';
+
+          newBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            window.open(newImg.src, '_blank');
+            alert(`Downloading wallpaper: "${title}"`);
+          });
+
+          newArticle.appendChild(newImg);
+          newDiv.appendChild(newH3);
+          newDiv.appendChild(newP);
+          newArticle.appendChild(newDiv);
+          newArticle.appendChild(newBtn);
+
+          newArticle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+              newBtn.click();
+            }
+          });
+
+          wallpaperGrid.prepend(newArticle);
+
+          uploadMessage.textContent = 'Wallpaper uploaded successfully!';
+          uploadMessage.classList.remove('text-red-600');
+          uploadMessage.classList.add('text-green-600');
+
+          uploadForm.reset();
+        };
+        reader.readAsDataURL(file);
+      }, 1500);
+    });
+  </script>
+ </body>
+</html>
